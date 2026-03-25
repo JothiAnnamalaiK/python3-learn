@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+my_first_py_env/
+my_venv_2/
+
+requirements.txt
+get_request_data.txt
+
+# Logs
+*.log
+
+# IDEs
+.vscode/
+.idea/
+
+# add only .py files inside 15_file_handling
+# Ignore everything in the folder
+15_file_handling/**
+
+# Except Python files in all subfolders
+!15_file_handling/**/*.py

@@ -12,7 +12,7 @@ tables = [5*i for i in range(1, 11)] #shortcut
 print("list comprehension method", tables)
 
 #get square root of 1-10
-sq_root = [i**2 for i in range(11)] 
+sq_root = [i**2 for i in range(11)]  #range(11) will start from zero
 
 print("square root", sq_root)
 
