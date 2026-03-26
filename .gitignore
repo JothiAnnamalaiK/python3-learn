@@ -25,3 +25,17 @@ get_request_data.txt
 
 # Except Python files in all subfolders
 !15_file_handling/**/*.py
+
+18_hands_on_projects/**/*.pdf
+
+#app build & dist
+build/
+dist/
+
+# Ignore everything inside the folder
+# 18_hands_on_projects/05_drink_water_reminder/*
+18_hands_on_projects/08_QR_Code_generator/qr-gen/*
+
+# Keep folders (so structure is preserved)
+!18_hands_on_projects/08_QR_Code_generator/**/
+
