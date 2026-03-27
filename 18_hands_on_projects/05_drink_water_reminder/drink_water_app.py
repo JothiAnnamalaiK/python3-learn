@@ -6,9 +6,9 @@ import subprocess
 import threading
 import time
 
-INTERVAL = 360  # seconds (1/2 hour)
+INTERVAL = 1800  # 1800 seconds (1/2 hour) # 360 for 6 mins
 
-SNOOZE_DURATION = 60  # 10 minutes in seconds
+SNOOZE_DURATION = 600  # 10 minutes in seconds
 snz_dur_mins = SNOOZE_DURATION / 60  # in min
 SNOOZE_DUR_INMINS = (
     f"{int(snz_dur_mins)}" if snz_dur_mins.is_integer() else f"{snz_dur_mins:.1f}"

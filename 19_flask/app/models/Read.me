@@ -1,0 +1,18 @@
+
+To start migrations:
+    Run these in terminal in proj root:
+        export FLASK_APP=app       # tells Flask where your app is
+        export FLASK_ENV=development  # sets development mode
+
+
+
+=> Run Flask-Migrate commands
+
+# Initialize migrations (only first time) # to create migrations folder
+    flask db init
+
+# Generate migration file
+    flask db migrate -m "Create contact table"
+
+# Apply migration to create tables
+    flask db upgrade

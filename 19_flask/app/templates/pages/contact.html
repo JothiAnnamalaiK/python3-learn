@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block page_wise_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-5 ">
+    <h1>Welcome to Flask App - Contact Page 🚀</h1>
+    <div class="">
+        <section class="hk-contact-wrap centered">
+            <div class="hk-contact-card">
+        
+              <div class="hk-contact-head">
+                <h1>Let’s Talk</h1>
+                <p>Have a project or idea? Drop a message and let’s connect.</p>
+              </div>
+
+              {# This is Jinja comment #}
+
+              <div class="err-msg">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">
+                            {{ message }}
+                        </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+              </div>
+        
+              <form class="hk-contact-form" method="POST" action="{{ url_for('main.add_contact') }}" >
+                <!-- Inject CSRF token -->
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <div class="hk-input-group">
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Name"
+                        value="{{ form_data.name if form_data else '' }}"
+                        class="form-control {% if errors.name %}is-invalid{% endif %}">
+                    
+                    <label>Full Name</label>
+
+                    {% if errors.name %}
+                        <div class="invalid-feedback">{{ errors.name }}</div>
+                    {% endif %}
+                </div>
+        
+                <div class="hk-input-group">
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        value="{{ form_data.email if form_data else '' }}"
+                        class="form-control {% if errors.email %}is-invalid{% endif %}">
+                    <label>Email Address</label>
+
+                    
+                    {% if errors.email %}
+                        <div class="invalid-feedback">{{ errors.email }}</div>
+                    {% endif %}
+                </div>
+        
+                <div class="hk-input-group">
+                    <input
+                        type="text"
+                        name="subject"
+                        placeholder="Subject"
+                        value="{{ form_data.subject if form_data else '' }}"
+                        class="form-control {% if errors.subject %}is-invalid{% endif %}">
+                    <label>Subject</label>
+
+                    {% if errors.subject %}
+                        <div class="invalid-feedback">{{ errors.subject }}</div>
+                    {% endif %}
+                </div>
+        
+                <div class="hk-input-group">
+                    <textarea
+                        name="message"
+                        placeholder="Message"
+                        class="form-control {% if errors.message %}is-invalid{% endif %}">{{ form_data.message if form_data else '' }}</textarea>
+                    <label>Your Message</label>
+
+                    {% if errors.message %}
+                        <div class="invalid-feedback">{{ errors.message }}</div>
+                    {% endif %}
+                </div>
+        
+                <button type="submit" class="hk-submit-btn">
+                  Send Message
+                </button>
+              </form>
+        
+            </div>
+        </section>
+    </div>
+    
+</div>
+
+{% endblock %}
