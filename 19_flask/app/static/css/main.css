@@ -1,0 +1,56 @@
+@import "variables.css";
+@import "components.css";
+
+/* Make body full height */
+html, body {
+    height: 100%;
+    margin: 0; 
+}
+
+body{
+    font-family: Arial;
+}
+
+/* Flex wrapper */
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Page content grows to fill space */
+.content {
+    flex: 1;
+}
+
+/* Main content area */
+.main-content {
+    display: flex;              /* enables flex */
+    justify-content: center;    /* horizontal centering */
+    align-items: center;        /* vertical centering */
+    min-height: calc(100vh - 120px); /* full height minus navbar+footer height */
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Centered inner div */
+.centered {
+    /* max-width: 600px;  */
+    margin: 0 auto;
+}
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}

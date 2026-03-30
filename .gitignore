@@ -1,6 +1,9 @@
 # macOS
 .DS_Store
 
+.env
+
+
 # Python cache
 __pycache__/
 *.py[cod]
@@ -8,6 +11,8 @@ __pycache__/
 # Virtual environment
 my_first_py_env/
 my_venv_2/
+flask-venv/
+
 
 requirements.txt
 get_request_data.txt
@@ -39,3 +44,4 @@ dist/
 # Keep folders (so structure is preserved)
 !18_hands_on_projects/08_QR_Code_generator/**/
 
+19_flask/.env

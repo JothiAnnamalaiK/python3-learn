@@ -1,0 +1,113 @@
+
+.hk-contact-wrap {
+    width: 100%;
+    max-width: 420px;
+    margin-top: 2%;
+}
+  
+.hk-contact-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 35px 30px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+  
+.hk-contact-head {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.hk-contact-head h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 8px;
+}
+
+.hk-contact-head p {
+    font-size: 14px;
+    color: #666;
+}
+  
+.hk-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.hk-input-group {
+    position: relative;
+}
+  
+.hk-input-group input,
+.hk-input-group textarea {
+    width: 100%;
+    padding: 14px 12px;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s;
+    background: transparent;
+}
+  
+.hk-input-group label {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    color: #888;
+    font-size: 13px;
+    pointer-events: none;
+    transform: translateY(-50%);
+    background: #fff;
+    padding: 0 6px;
+    transition: 0.3s;
+}
+
+.hk-input-group textarea + label {
+    top: 18px;
+    transform: none;
+}
+
+.hk-input-group input:focus,
+.hk-input-group textarea:focus {
+    border-color: #2c5364;
+}
+  
+.hk-input-group input:focus + label,
+.hk-input-group textarea:focus + label,
+.hk-input-group input:valid + label,
+.hk-input-group textarea:valid + label {
+    top: -7px;
+    font-size: 11px;
+    color: #2c5364;
+}
+  
+.hk-submit-btn {
+    margin-top: 10px;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #2c5364, #203a43);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hk-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(44, 83, 100, 0.4);
+}
+  
+@media (max-width: 480px) {
+    .hk-contact-card {
+      padding: 28px 22px;
+    }
+  
+    .hk-contact-head h1 {
+      font-size: 24px;
+    }
+}
+  

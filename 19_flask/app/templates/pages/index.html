@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <div class="container-fluid p-5">
+        <div>
+            <div class="err-msg">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">
+                            {{ message }}
+                        </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+              </div>
+        </div>
+        <h1>Welcome to Flask App - Home Page 🚀</h1>
+        <h2>Hi {{current_user}} </h2>
+    </div>
+
+{% endblock %}
