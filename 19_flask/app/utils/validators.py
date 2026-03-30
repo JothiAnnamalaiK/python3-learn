@@ -15,3 +15,12 @@ def validate_contact(data):
     if not data.get("message"):
         errors["message"] = "Message is required"
     return errors
+
+
+def validate_login(data):
+    errors = {}
+    if not data.get("email"):
+        errors["email"] = "Email is required"
+    if not data.get("password"):
+        errors["password"] = "Password is required"
+    return errors

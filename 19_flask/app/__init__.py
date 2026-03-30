@@ -1,4 +1,12 @@
-from flask import Flask, render_template, current_app
+from flask import (
+    Flask,
+    render_template,
+    current_app,
+    session,
+    redirect,
+    url_for,
+    request,
+)
 import os
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -34,6 +42,7 @@ def create_app():
     migrate.init_app(app, db)  # db migration
 
     # IMPORT models here so Flask-Migrate sees them
+    from app.models.user import User
     from app.models.contact import Contact
 
     # check_db_connection()
@@ -56,9 +65,18 @@ def create_app():
     app.register_blueprint(api)
     # app.register_blueprint(auth)
 
+    from app.routes.auth import auth
+
+    app.register_blueprint(auth)
+
     # Register error pages
     from .errors import register_error_handlers
 
     register_error_handlers(app)
+
+    # Make current_user available in all templates
+    @app.context_processor
+    def inject_user():
+        return dict(current_user=session.get("user_name"))
 
     return app

@@ -16,6 +16,10 @@ class Config:
     FLASK_RUN_PORT = 5000
     BASE_URL = "/"  # optional, can be used for reverse URL generation
 
+    SESSION_PERMANENT = False
+    SESSION_TYPE = "filesystem"
+    PERMANENT_SESSION_LIFETIME = 3600  # 1 hour
+
 
 class DevelopmentConfig(Config):
     DEBUG = True
