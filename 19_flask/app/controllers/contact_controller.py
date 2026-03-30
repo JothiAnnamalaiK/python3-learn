@@ -1,5 +1,6 @@
 from flask import render_template, request, flash, redirect, url_for, g
-from app.services.contact_service import save_contact, validate_contact
+from app.services.contact_service import save_contact
+from app.utils.validators import validate_contact
 from app import csrf
 
 

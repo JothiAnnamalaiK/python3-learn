@@ -50,6 +50,10 @@ def create_app():
     from app.routes.main import main
 
     app.register_blueprint(main)
+
+    from app.routes.api.api import api
+
+    app.register_blueprint(api)
     # app.register_blueprint(auth)
 
     # Register error pages
